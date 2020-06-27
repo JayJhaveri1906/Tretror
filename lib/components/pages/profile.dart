@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter95/flutter95.dart';
 
-class ProfilePage extends StatelessWidget{
-	@override
-	Widget build(BuildContext context) {
-		Column(
+class ProfilePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold95(
+      title: "Profile",
+      body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Image.network('https://hemmy.xyz/tretror/banner.png',
@@ -63,6 +66,7 @@ class ProfilePage extends StatelessWidget{
                 OutlineButton(onPressed: null, child: Text('Likes'))
               ])
         ],
-      );
-	}
+      ),
+    );
+  }
 }
