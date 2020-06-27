@@ -26,6 +26,7 @@ class Post extends StatelessWidget {
             child: Text(
               username,
               style: Theme.of(context).textTheme.headline6,
+              textScaleFactor: 0.7,
             ),
           ),
           leading: CircleAvatar(
