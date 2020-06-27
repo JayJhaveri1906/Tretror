@@ -12,26 +12,31 @@ class Post extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        SizedBox(height:20),
-        Elevation95(
-          child: Container(
-            margin: const EdgeInsets.all(10.0),
-            padding: const EdgeInsets.all(4.0),
-            // decoration: BoxDecoration(
-            //   border: Border.all(),
-            // ),
-            child: Column(
-              children: <Widget>[
-                Container(
-                  child: Text(
-                    username,
-                    style: Theme.of(context).textTheme.headline4,
-                  ),
-                ),
-                Elevation95(
-                  type: Elevation95Type.down,
+    return Dialog(
+      elevation: 0,
+      insetPadding: EdgeInsets.only(
+        left: 10,
+        right: 10,
+        bottom: 20,
+      ),
+      child: Elevation95(
+        child: ListTile(
+          title: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              username,
+              style: Theme.of(context).textTheme.headline6,
+            ),
+          ),
+          leading: CircleAvatar(
+            backgroundImage: NetworkImage("https://srv4.imgonline.com.ua/result_img/imgonline-com-ua-8bit-Picture-jyi4Zy39RNCZf.png"),
+          ),
+          subtitle: Column(
+            children: <Widget>[
+              Elevation95(
+                type: Elevation95Type.down,
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
                   child: Flexible(
                     child: Text(
                       post,
@@ -41,22 +46,22 @@ class Post extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height:10),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    RetroButton(child: FeedIcon(FeedIconType.Comment)),
-                    RetroButton(child: FeedIcon(FeedIconType.Recraw)),
-                    RetroButton(child: FeedIcon(FeedIconType.Heart)),
-                    RetroButton(child: FeedIcon(FeedIconType.Bookmark)),
-                  ],
-                )
-              ],
-            ),
+              ),
+              SizedBox(height: 10),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  RetroButton(child: FeedIcon(FeedIconType.Comment)),
+                  RetroButton(child: FeedIcon(FeedIconType.Recraw)),
+                  RetroButton(child: FeedIcon(FeedIconType.Heart)),
+                  RetroButton(child: FeedIcon(FeedIconType.Bookmark)),
+                ],
+              ),
+            ],
           ),
         ),
-      ],
+      ),
     );
   }
 }

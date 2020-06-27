@@ -16,12 +16,12 @@ class FeedsHome extends StatelessWidget {
       toolbar: Toolbar95(
         actions: [
           Item95(
-              label: 'Kraa',
+              label: 'New',
               menu: Menu95(
                 items: [
                   MenuItem95(
                     value: 1,
-                    label: 'New Craa',
+                    label: 'Craawww now!!',
                   )
                 ],
                 onItemSelected: (item) {},
