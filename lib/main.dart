@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'tRetRor',
+      title: 'tRETROr',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         // dialogBackgroundColor: Colors.transparent,
@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
               textStyle: Theme.of(context).textTheme.bodyText1),
         ),
       ),
-      home: FeedsHome(),
+      home: SplashScreen(),
     );
   }
 }

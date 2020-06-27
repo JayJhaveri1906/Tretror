@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter95/flutter95.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:tretror/components/ui/FeedIcon.dart';
 import 'package:tretror/components/ui/RetroButton.dart';
+import 'package:tretror/model/Craww.dart';
 
 class Post extends StatelessWidget {
   final String username;
-  final String post;
+  final String crawwContent;
+  final String avatarUrl;
 
-  Post(this.username, this.post);
+  Post(Craww craww)
+      : username = craww?.user?.name,
+        crawwContent = craww?.content,
+        avatarUrl = craww?.user?.avatarUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -24,13 +28,13 @@ class Post extends StatelessWidget {
           title: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
-              username,
+              username ?? "",
               style: Theme.of(context).textTheme.headline6,
               textScaleFactor: 0.7,
             ),
           ),
           leading: CircleAvatar(
-            backgroundImage: NetworkImage("https://srv4.imgonline.com.ua/result_img/imgonline-com-ua-8bit-Picture-jyi4Zy39RNCZf.png"),
+            backgroundImage: NetworkImage(avatarUrl),
           ),
           subtitle: Column(
             children: <Widget>[
@@ -40,7 +44,7 @@ class Post extends StatelessWidget {
                   padding: const EdgeInsets.all(20.0),
                   child: Flexible(
                     child: Text(
-                      post,
+                      crawwContent ?? "",
                       textAlign: TextAlign.left,
                       style: Theme.of(context).textTheme.bodyText1,
                       textScaleFactor: 2,

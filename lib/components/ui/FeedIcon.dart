@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 enum FeedIconType { Comment, Recraw, Heart, Bookmark }
 
 class FeedIcon extends StatelessWidget {
-  FeedIconType iconType;
+  final FeedIconType iconType;
 
   FeedIcon(this.iconType);
 

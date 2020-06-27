@@ -1,29 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:tretror/api/FeedCatalog.dart';
 import 'package:tretror/components/ui/Post.dart';
+import 'package:tretror/components/ui/PostLoading.dart';
+
 
 class Posts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-        color: Colors.grey,
-        child: ListView(
-          children: <Widget>[
-            Post("Sundar Pichai", """#FlutterDayMeetups: San Fransisco
-Taking place right before #flutterday
-Session 2: 8PM PST"""),
-            Post("Sundar Pichai",
-                "Two Flutter Day Metups  blah blah blha \n another line of blah"),
-            Post("Sundar Pichai",
-                "Three Flutter Day Metups  blah blah blha \n another line of blah"),
-            Post("Sundar Pichai",
-                "Four Flutter Day Metups  blah blah blha \n another line of blah"),
-            Post("Sundar Pichai",
-                "Four Flutter Day Metups  blah blah blha \n another line of blah"),
-            Post("Sundar Pichai",
-                "Four Flutter Day Metups  blah blah blha \n another line of blah"),
-            Post("Sundar Pichai",
-                "Four Flutter Day Metups  blah blah blha \n another line of blah"),
-          ],
-        ));
+    return ChangeNotifierProvider(
+      create: (context) => FeedCatalog(),
+      child: Container(
+          color: Colors.grey,
+          child: Selector<FeedCatalog, int>(
+              selector: (context, catalog) => catalog.itemCount,
+              builder: (context, itemCount, child) => ListView.builder(
+                    itemCount: 5,
+                    itemBuilder: (context, index) {
+                      var catalog = Provider.of<FeedCatalog>(context);
+                      var craww = catalog.getByIndex(index);
+
+                      if(craww.isLoading){
+                        print("Loading index $index");
+                        return PostLoading();
+                      }
+
+                      print("Returning a post $index");
+                      return Post(craww);
+                    },
+                  ))),
+    );
   }
 }
