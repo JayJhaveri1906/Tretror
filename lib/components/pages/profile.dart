@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter95/flutter95.dart';
+import 'package:tretror/components/ui/RetroButton.dart';
 
 class ProfilePage extends StatelessWidget {
   @override
@@ -60,10 +61,10 @@ class ProfilePage extends StatelessWidget {
           Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                OutlineButton(onPressed: null, child: Text('Krawws')),
-                OutlineButton(onPressed: null, child: Text('Reply Kraws')),
-                OutlineButton(onPressed: null, child: Text('Media')),
-                OutlineButton(onPressed: null, child: Text('Likes'))
+                RetroButton(onPressed: null, text: 'Krawws'),
+                RetroButton(onPressed: null, text: 'Reply Kraws'),
+                RetroButton(onPressed: null, text: 'Media'),
+                RetroButton(onPressed: null, text: 'Likes')
               ])
         ],
       ),
