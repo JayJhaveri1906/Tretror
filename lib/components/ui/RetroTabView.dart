@@ -17,6 +17,13 @@ class _RetroTabViewState extends State<RetroTabView> {
   RetroTab selectedTab;
 
   @override
+  void initState() {
+    selectedTab = widget.tabs[0];
+    super.initState();
+  }
+
+
+  @override
   Widget build(BuildContext context) {
     return Elevation95(
       child: Container(
