@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter95/flutter95.dart';
+import 'package:tretror/components/pages/CrawwItPage.dart';
+import 'package:tretror/components/ui/Posts.dart';
 import 'package:tretror/components/ui/RetroButton.dart';
+import 'package:tretror/components/ui/RetroTab.dart';
+import 'package:tretror/components/ui/RetroTabView.dart';
 
 class ProfilePage extends StatelessWidget {
   @override
@@ -58,14 +62,21 @@ class ProfilePage extends StatelessWidget {
                               fontSize: 16, color: Color(0xff767676))))
                 ])
               ])),
-          Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                RetroButton(onPressed: null, text: 'Krawws'),
-                RetroButton(onPressed: null, text: 'Reply Kraws'),
-                RetroButton(onPressed: null, text: 'Media'),
-                RetroButton(onPressed: null, text: 'Likes')
-              ])
+          // Row(
+          //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //     children: <Widget>[
+          //       RetroButton(onPressed: null, text: 'Krawws'),
+          //       RetroButton(onPressed: null, text: 'Reply Kraws'),
+          //       RetroButton(onPressed: null, text: 'Media'),
+          //       RetroButton(onPressed: null, text: 'Likes')
+          //     ])
+
+          RetroTabView(tabs: [
+            RetroTab(tabHeader: "Krawws", body: Posts()),
+            RetroTab(tabHeader: "Reply Krawws", body: Posts()),
+            RetroTab(tabHeader: "Media", body: Posts()),
+            RetroTab(tabHeader: "Likes", body: CrawwItPage()),
+          ])
         ],
       ),
     );
