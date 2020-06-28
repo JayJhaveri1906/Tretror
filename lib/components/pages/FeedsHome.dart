@@ -21,7 +21,7 @@ class FeedsHome extends StatelessWidget {
                 items: [
                   MenuItem95(
                     value: 1,
-                    label: 'Craawww now!!',
+                    label: 'Kraww now!!',
                   )
                 ],
                 onItemSelected: (item) {
