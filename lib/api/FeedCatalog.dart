@@ -1,70 +1,49 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:tretror/api/FeedPage.dart';
-import 'package:tretror/api/fetch.dart';
 import 'package:tretror/model/Craww.dart';
-
+import 'package:tretror/model/User.dart';
 
 class FeedCatalog extends ChangeNotifier {
-  static const maxCacheDistance = 100;
+  static final List<Craww> _craws = [
+    Craww(
+      user: User(
+        name: "Sundar Pichai",
+        handle: "@sundarpichai",
+        avatarUrl:
+            "https://pbs.twimg.com/profile_images/864282616597405701/M-FEJMZ0_400x400.jpg",
+      ),
+      content: """#FlutterDayMeetups : San Fransisco
 
-  final Map<int, FeedPage> _pages = {};
+Taking place right before #flutterday
+Session 2: 8PM PST""",
+    ),
 
-  final Set<int> _pagesBeingFetched = {};
+    Craww(
+      user: User(
+        name: "Sundar Pichai",
+        handle: "@sundarpichai",
+        avatarUrl:
+            "https://pbs.twimg.com/profile_images/864282616597405701/M-FEJMZ0_400x400.jpg",
+      ),
+      content: """#HACK20 This looks exciting.. Retro!""",
+    ),
 
-  int itemCount = 0;
+    Craww(
+      user: User(
+        name: "Sundar Pichai",
+        handle: "@sundarpichai",
+        avatarUrl:
+            "https://pbs.twimg.com/profile_images/864282616597405701/M-FEJMZ0_400x400.jpg",
+      ),
+      content: """We all know retro is the new cool""",
+    ),
 
-  bool _isDisposed = false;
 
-  @override
-  void dispose() {
-    _isDisposed = true;
-    super.dispose();
-  }
+  ];
 
-  Craww getByIndex(int index) {
-    var startingIndex = (index ~/ itemsPerPage) * itemsPerPage;
 
-    if (_pages.containsKey(startingIndex)) {
-      var item = _pages[startingIndex].crawws[index - startingIndex];
-      return item;
-    }
+   List<Craww> get crawws => _craws;
 
-    _fetchPage(startingIndex);
 
-    return Craww.loading();
-  }
 
-  Future<void> _fetchPage(int startingIndex) async {
-    if (_pagesBeingFetched.contains(startingIndex)) {
-      return;
-    }
-
-    _pagesBeingFetched.add(startingIndex);
-    final page = await fetchPage(startingIndex);
-    _pagesBeingFetched.remove(startingIndex);
-
-    if (!page.hasNext) {
-      itemCount = startingIndex + page.crawws.length;
-    }
-
-    _pages[startingIndex] = page;
-    _pruneCache(startingIndex);
-
-    if (!_isDisposed) {
-      notifyListeners();
-    }
-  }
-
-  void _pruneCache(int currentStartingIndex) {
-    final keysToRemove = <int>{};
-    for (final key in _pages.keys) {
-      if ((key - currentStartingIndex).abs() > maxCacheDistance) {
-        keysToRemove.add(key);
-      }
-    }
-    for (final key in keysToRemove) {
-      _pages.remove(key);
-    }
-  }
 }

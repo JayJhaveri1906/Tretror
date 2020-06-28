@@ -40,7 +40,9 @@ class FeedsHome extends StatelessWidget {
           ),
         ],
       ),
-      body: Expanded(child: Posts()),
+      body: Expanded(
+        flex: 1,
+        child: Posts()),
     );
   }
 }
