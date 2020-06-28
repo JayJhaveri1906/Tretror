@@ -4,6 +4,7 @@ Why anyone need to tweet when they can "CRaWwwW!" it with a nicer bird?
 tRETROr is a micro kRawWwing app, with retro looks!
 
 It was made as part of #Hack20 @ flutterhackathon.com
+- How it looks : [View screencast on Youtube](https://www.youtube.com/watch?v=OS9FWoO--60)
 
 ## Getting Started
 
