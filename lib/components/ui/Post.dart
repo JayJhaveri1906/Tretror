@@ -4,7 +4,7 @@ import 'package:tretror/components/ui/FeedIcon.dart';
 import 'package:tretror/components/ui/RetroButton.dart';
 import 'package:tretror/model/Craww.dart';
 
-class Post extends StatelessWidget {
+class Post extends StatefulWidget {
   final String username;
   final String crawwContent;
   final String avatarUrl;
@@ -13,6 +13,13 @@ class Post extends StatelessWidget {
       : username = craww?.user?.name,
         crawwContent = craww?.content,
         avatarUrl = craww?.user?.avatarUrl;
+
+  @override
+  _PostState createState() => _PostState();
+}
+
+class _PostState extends State<Post> {
+  bool isHearted = false;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +35,7 @@ class Post extends StatelessWidget {
           title: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
-              username ?? "",
+              widget.username ?? "",
               style: Theme.of(context).textTheme.headline6,
               textScaleFactor: 0.7,
             ),
@@ -37,7 +44,7 @@ class Post extends StatelessWidget {
               child: Elevation95(
                 type: Elevation95Type.up,
                 child: CircleAvatar(
-                  backgroundImage: NetworkImage(avatarUrl),
+                  backgroundImage: NetworkImage(widget.avatarUrl),
                 ),
               ),
               onTap: () {
@@ -51,7 +58,7 @@ class Post extends StatelessWidget {
                   padding: const EdgeInsets.all(20.0),
                   child: Flexible(
                     child: Text(
-                      crawwContent ?? "",
+                      widget.crawwContent ?? "",
                       textAlign: TextAlign.left,
                       style: Theme.of(context).textTheme.bodyText1,
                       textScaleFactor: 2,
@@ -66,7 +73,17 @@ class Post extends StatelessWidget {
                 children: <Widget>[
                   RetroButton(child: FeedIcon(FeedIconType.Comment)),
                   RetroButton(child: FeedIcon(FeedIconType.Recraw)),
-                  RetroButton(child: FeedIcon(FeedIconType.Heart)),
+                  RetroButton(
+                    isDown: isHearted,
+                    child: FeedIcon(FeedIconType.Heart),
+                    onPressed: () {
+                      setState(
+                        () {
+                          isHearted = !isHearted;
+                        },
+                      );
+                    },
+                  ),
                   RetroButton(child: FeedIcon(FeedIconType.Bookmark)),
                 ],
               ),

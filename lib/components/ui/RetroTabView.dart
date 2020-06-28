@@ -34,6 +34,7 @@ class _RetroTabViewState extends State<RetroTabView> {
                     (tab) => Expanded(
                       child: RetroButton(
                         text: tab.tabHeader,
+                        isDown: tab == selectedTab,
                         onPressed: () {
                           setState(() {
                             selectedTab = tab;
