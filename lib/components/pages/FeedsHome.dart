@@ -24,7 +24,13 @@ class FeedsHome extends StatelessWidget {
                     label: 'Craawww now!!',
                   )
                 ],
-                onItemSelected: (item) {},
+                onItemSelected: (item) {
+
+                  if(item == 1){
+                     Navigator.of(context).pushNamed("/crawwit");
+                  }
+
+                },
               )),
           Item95(
             label: 'Search',

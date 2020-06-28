@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:tretror/api/FeedCatalog.dart';
+import 'package:tretror/components/pages/CrawwItPage.dart';
 import 'package:tretror/components/pages/FeedsHome.dart';
 import 'package:tretror/components/pages/Splash.dart';
 import 'package:tretror/components/pages/ProfilePage.dart';
@@ -22,9 +23,11 @@ class MyApp extends StatelessWidget {
         routes: {
           '/feedsHome': (context) => FeedsHome(),
           '/profile': (context) => ProfilePage(),
+          '/crawwit': (context) => CrawwItPage(),
         },
         theme: ThemeData(
           primarySwatch: Colors.blue,
+
           // dialogBackgroundColor: Colors.transparent,
           visualDensity: VisualDensity.adaptivePlatformDensity,
           textTheme: TextTheme(
