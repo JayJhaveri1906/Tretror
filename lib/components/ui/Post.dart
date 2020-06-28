@@ -34,13 +34,15 @@ class Post extends StatelessWidget {
             ),
           ),
           leading: InkWell(
-            child: CircleAvatar(
-              backgroundImage: NetworkImage(avatarUrl),
-            ),
-            onTap: (){
-              Navigator.of(context).pushNamed("/profile");
-            }
-          ),
+              child: Elevation95(
+                type: Elevation95Type.up,
+                child: CircleAvatar(
+                  backgroundImage: NetworkImage(avatarUrl),
+                ),
+              ),
+              onTap: () {
+                Navigator.of(context).pushNamed("/profile");
+              }),
           subtitle: Column(
             children: <Widget>[
               Elevation95(
