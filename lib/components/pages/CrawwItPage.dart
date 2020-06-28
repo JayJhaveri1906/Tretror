@@ -27,7 +27,7 @@ class CrawwItPage extends StatelessWidget {
                 child: TextField(
                   // controller: notesController,
 
-                  maxLines: 5,
+                  maxLines: 8,
                   decoration: const InputDecoration(
                     border: const OutlineInputBorder(),
                     contentPadding: const EdgeInsets.all(10.0),
