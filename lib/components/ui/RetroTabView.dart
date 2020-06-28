@@ -22,7 +22,6 @@ class _RetroTabViewState extends State<RetroTabView> {
     super.initState();
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Elevation95(
@@ -45,8 +44,28 @@ class _RetroTabViewState extends State<RetroTabView> {
                   )
                   .toList(),
             ),
-            Container(child: selectedTab?.body)
+            TabViewBody(child: selectedTab?.body),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class TabViewBody extends StatelessWidget {
+  final Widget child;
+
+  TabViewBody({this.child});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 400,
+      child: Padding(
+        padding: const EdgeInsets.all(4.0),
+        child: Elevation95(
+          type: Elevation95Type.down,
+          child: child,
         ),
       ),
     );

@@ -38,6 +38,15 @@ Session 2: 8PM PST""",
       content: """We all know retro is the new cool""",
     ),
 
+    Craww(
+      user: User(
+        name: "Sundar Pichai",
+        handle: "@sundarpichai",
+        avatarUrl:
+            "https://pbs.twimg.com/profile_images/864282616597405701/M-FEJMZ0_400x400.jpg",
+      ),
+      content: """Here is yet another attempt at krawwing""",
+    ),
 
   ];
 
