@@ -71,7 +71,7 @@ class ProfilePage extends StatelessWidget {
 
             RetroTabView(tabs: [
               RetroTab(tabHeader: "Krawws", body: Posts()),
-              RetroTab(tabHeader: "Reply Krawws", body: Icon(Icons.message)),
+              RetroTab(tabHeader: "Reply Krawws", body: Posts()),
               RetroTab(tabHeader: "Media", body: Icon(Icons.video_call)),
               RetroTab(tabHeader: "Likes", body: Icon(Icons.thumb_up)),
             ])
