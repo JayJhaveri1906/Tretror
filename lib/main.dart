@@ -19,6 +19,9 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'tRETROr',
+        routes: {
+          '/feedsHome': (context) => FeedsHome(),
+        },
         theme: ThemeData(
           primarySwatch: Colors.blue,
           // dialogBackgroundColor: Colors.transparent,
