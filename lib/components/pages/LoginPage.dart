@@ -5,6 +5,7 @@ class LoginPage extends StatelessWidget {
 	@override
 	Widget build ( BuildContext context ) {
 		return Scaffold95(
+        title: 'LOGIN',
         body: Center(
             child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
