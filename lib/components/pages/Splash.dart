@@ -13,7 +13,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(
-        Duration(seconds: 3),
+        Duration(seconds: 4),
         () => Navigator.of(context).pushReplacementNamed("/feedsHome"));
   }
 
@@ -21,39 +21,34 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold95(
       title: "Loading...",
-      body: Container(
-        alignment: Alignment.center,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.all(25.0),
-                ),
-                Image.network('https://hemmy.xyz/tretror/logo.png',
-                    height: 60, fit: BoxFit.fill),
-                Padding(
-                  padding: EdgeInsets.all(16.0),
-                ),
-                Text(
-                  'Tretror',
-                  style: TextStyle(fontSize: 29),
-                ),
-              ],
-            ),
-            Column(
-              children: <Widget>[
-                Text(
-                  'Just Kraw it!',
-                  style: TextStyle(color: Color(0xff767676), fontSize: 15),
-                ),
-                Padding(padding: EdgeInsets.all(25.0)),
-              ],
-            )
-          ],
+      body: DefaultTextStyle(
+        style: Theme.of(context).textTheme.headline6,
+        child: Container(
+          alignment: Alignment.center,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              SizedBox(height: 100),
+              Image(
+                  image: AssetImage('assets/icons/logo/logo@2x.png'),
+                  height: 60,
+                  fit: BoxFit.fill),
+              SizedBox(height: 50),
+              Text(
+                'Tretror',
+                style: TextStyle(fontSize: 29),
+              ),
+              Text(
+                'Just Kraw it!',
+                style: TextStyle(color: Color(0xff767676), fontSize: 15),
+              ),
+              Padding(padding: EdgeInsets.all(25)),
+              Elevation95(
+                type: Elevation95Type.down,
+                  child: Image(image: AssetImage('assets/gif/progressbar.gif')))
+            ],
+          ),
         ),
       ),
     );

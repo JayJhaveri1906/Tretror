@@ -80,4 +80,5 @@ flutter:
   # see https://flutter.dev/custom-fonts/#from-packages
   assets:
   - assets/feed_icons/
-
+  - assets/icons/logo/
+  - assets/gif/
