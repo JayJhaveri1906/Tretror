@@ -22,13 +22,15 @@ class CrawwItPage extends StatelessWidget {
             ),
             Elevation95(
               type: Elevation95Type.down,
-              child: TextField(
-                // controller: notesController,
-
-                maxLines: 5,
-                decoration: const InputDecoration(
-                  border: const OutlineInputBorder(),
-                  contentPadding: const EdgeInsets.all(10.0),
+              child: Container(
+                color: Colors.white,
+                child: TextField(
+                  // controller: crawwtextController,
+                  maxLines: 5,
+                  decoration: const InputDecoration(
+                    border: const OutlineInputBorder(),
+                    contentPadding: const EdgeInsets.all(10.0),
+                  ),
                 ),
               ),
             ),
@@ -38,7 +40,6 @@ class CrawwItPage extends StatelessWidget {
               style: Theme.of(context).textTheme.bodyText1,
               textScaleFactor: 2,
             ),
-
           ],
         )),
       ),
