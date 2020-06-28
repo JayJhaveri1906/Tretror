@@ -7,6 +7,10 @@ import 'package:tretror/components/ui/PostLoading.dart';
 class Posts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
+    /**
+     * Instead of Container use Flexible( fit: FlexFit.tight, child: null )
+     */
     return Container(
       color: Colors.grey,
       child: ListView.builder(
