@@ -11,17 +11,15 @@ class RetroButton extends StatelessWidget {
   RetroButton({this.child, this.onPressed, this.text});
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Button95(
-        onTap: (onPressed != null ? onPressed : () => print("No action on button")),
-        child: text != null
-            ? Text(
-                text,
-                style: Theme.of(context).textTheme.bodyText1,
-                textScaleFactor: 1.5,
-              )
-            : child,
-      ),
+    return Button95(
+      onTap: (onPressed != null ? onPressed : () => print("No action on button")),
+      child: text != null
+          ? Text(
+              text,
+              style: Theme.of(context).textTheme.bodyText1,
+              textScaleFactor: 1.5,
+            )
+          : child,
     );
   }
 }
