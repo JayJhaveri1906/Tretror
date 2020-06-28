@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:tretror/api/FeedCatalog.dart';
 import 'package:tretror/components/pages/FeedsHome.dart';
 import 'package:tretror/components/pages/Splash.dart';
-import 'package:tretror/components/pages/profile.dart';
+import 'package:tretror/components/pages/ProfilePage.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
         title: 'tRETROr',
         routes: {
           '/feedsHome': (context) => FeedsHome(),
+          '/profile': (context) => ProfilePage(),
         },
         theme: ThemeData(
           primarySwatch: Colors.blue,

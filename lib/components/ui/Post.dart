@@ -33,8 +33,13 @@ class Post extends StatelessWidget {
               textScaleFactor: 0.7,
             ),
           ),
-          leading: CircleAvatar(
-            backgroundImage: NetworkImage(avatarUrl),
+          leading: InkWell(
+            child: CircleAvatar(
+              backgroundImage: NetworkImage(avatarUrl),
+            ),
+            onTap: (){
+              Navigator.of(context).pushNamed("/profile");
+            }
           ),
           subtitle: Column(
             children: <Widget>[
