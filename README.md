@@ -1,10 +1,13 @@
 # tretror
 
-A new Flutter project.
+Why anyone need to tweet when they can "CRaWwwW!" it with a nicer bird?
+tRETROr is a micro kRawWwing app, with retro looks!
+
+It was made as part of #Hack20 @ flutterhackathon.com
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This is a flutter app
 
 A few resources to get you started if this is your first Flutter project:
 
