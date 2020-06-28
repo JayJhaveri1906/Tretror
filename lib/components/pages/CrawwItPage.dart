@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter95/flutter95.dart';
-import 'package:tretror/components/ui/FeedIcon.dart';
+//import 'package:tretror/components/ui/FeedIcon.dart';
 import 'package:tretror/components/ui/RetroButton.dart';
 
 class CrawwItPage extends StatelessWidget {

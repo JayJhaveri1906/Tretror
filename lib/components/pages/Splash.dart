@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter95/flutter95.dart';
-import 'package:tretror/components/pages/FeedsHome.dart';
+//import 'package:tretror/components/pages/FeedsHome.dart';
 
 class SplashScreen extends StatefulWidget {
   @override

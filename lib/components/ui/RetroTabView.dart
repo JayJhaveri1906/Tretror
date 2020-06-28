@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter95/flutter95.dart';
-import 'package:tretror/components/ui/Posts.dart';
+//import 'package:tretror/components/ui/Posts.dart';
 import 'package:tretror/components/ui/RetroButton.dart';
 import 'package:tretror/components/ui/RetroTab.dart';
 
 class RetroTabView extends StatefulWidget {
-  List<RetroTab> tabs;
+  fianl List<RetroTab> tabs;
 
   RetroTabView({this.tabs});
 
