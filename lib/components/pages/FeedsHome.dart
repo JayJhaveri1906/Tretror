@@ -40,10 +40,6 @@ class FeedsHome extends StatelessWidget {
             label: 'Notifications',
             onTap: (context) {},
           ),
-          Item95(
-            label: 'Messages',
-            onTap: (context) {},
-          ),
         ],
       ),
       body: Expanded(
