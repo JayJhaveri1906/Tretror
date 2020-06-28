@@ -5,7 +5,7 @@ import 'package:tretror/components/ui/RetroButton.dart';
 import 'package:tretror/components/ui/RetroTab.dart';
 
 class RetroTabView extends StatefulWidget {
-  fianl List<RetroTab> tabs;
+  final List<RetroTab> tabs;
 
   RetroTabView({this.tabs});
 
