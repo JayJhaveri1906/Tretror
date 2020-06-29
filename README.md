@@ -1,4 +1,5 @@
 # tretror
+![](https://github.com/sanjul/Tretror/workflows/Flutter%20CI%2FCD/badge.svg)
 
 Why anyone need to tweet when they can "CRaWwwW!" it with a nicer bird?
 tRETROr is a micro kRawWwing app, with retro looks!
